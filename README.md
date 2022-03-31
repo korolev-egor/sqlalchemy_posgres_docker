@@ -5,11 +5,11 @@
 ## Tables:
 #### Heroes:
 - id
-- side
+- side (Hero side, either 'radiant' or 'dire')
 - name
 - birthday
-- attribute
-- power
+- attribute ('Strength', 'Intelligence', or 'Agility')
+- power (Hero power from 1 to 100)
 #### Mottos:
 - id 
 - hero_id
@@ -25,7 +25,7 @@
 - hero2_id
 - hero1_id_motto_id
 - hero2_id_motto_id
-- winner
+- winner (0 for draw, 1 if first won, 2 else)
 ## How to run containers
 ### development
 To deploy from the root folder:
@@ -71,3 +71,5 @@ To switch cotnainers off:
 `python scripts.py add_story 100 Pepega is a beautiful, but naive creature`
 ### delete_hero(hero_id)
 `python scripts.py delete_hero 100`
+## Checking logs.txt
+`cat logs.txt`
