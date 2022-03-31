@@ -29,17 +29,21 @@ def add_hero(name, side=None, attribute=None, power=None, birthday=None):
 
 def add_motto(hero_id, *motto):
     motto = ' '.join(motto)
-    try:
-        result = Session().execute(select(model.Mottos).where(model.Mottos.hero_id == hero_id).order_by(model.Mottos.motto_id.desc()))
-        result = result.fetchone().Mottos.motto_id
-    except AttributeError:
-        logging.exception('There\'s no hero_id == %s in Heroes table', hero_id, exc_info=False)
-        return
+    hero_has_motto = Session().query(model.Mottos).filter_by(hero_id=hero_id).count()
+    if hero_has_motto:
+        try:
+            result = Session().execute(select(model.Mottos).where(model.Mottos.hero_id == hero_id).order_by(model.Mottos.motto_id.desc()))
+            result = result.fetchone().Mottos.motto_id
+        except AttributeError:
+            logging.exception('There\'s no hero_id == %s in Heroes table', hero_id, exc_info=False)
+            return
+    else:
+        result = 0
     motto_id = result + 1
     with Session() as session:
         session.add(model.Mottos(hero_id=hero_id, motto_id=motto_id, motto=motto))
         session.commit()
-    logging.info('Motto for hero with id %i has been added', hero_id)
+    logging.info('Motto for hero with id %s has been added', hero_id[0])
 
 
 def print_row(table_name, id_):
