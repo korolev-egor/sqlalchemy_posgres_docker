@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    container_name: postgres
+    container_name: korolev_postgres
     image: postgres:14-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -11,7 +11,7 @@ services:
     expose:
       - "5432"
   scripts:
-    container_name: scripts_prod
+    container_name: korolev_scripts_prod
     build:
       context: .
       dockerfile: Dockerfile

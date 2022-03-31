@@ -2,7 +2,7 @@ version: "3.8"
 
 services:    
   scripts:
-    container_name: scripts_dev
+    container_name: korolev_scripts_dev
     build:
       context: .
       dockerfile: Dockerfile
@@ -17,7 +17,7 @@ services:
     tty: true        # docker run -t
     restart: on-failure
   db:
-    container_name: postgres
+    container_name: korolev_postgres
     image: postgres:14-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
