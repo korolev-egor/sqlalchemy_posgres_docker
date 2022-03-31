@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 COPY . /usr/src/app/
 WORKDIR /usr/src/app/scripts
 EXPOSE 5432
-CMD python database.py ; tail -f /dev/null
+CMD sleep 3 ; python database.py ; tail -f /dev/null
