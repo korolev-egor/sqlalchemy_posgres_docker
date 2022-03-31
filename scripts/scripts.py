@@ -27,7 +27,8 @@ def add_hero(name, side=None, attribute=None, power=None, birthday=None):
     logging.info('Hero %s has been added for %s side', name, side)
 
 
-def add_motto(hero_id, motto):
+def add_motto(hero_id, *motto):
+    motto = ' '.join(motto)
     try:
         result = Session().execute(select(model.Mottos).where(model.Mottos.hero_id == hero_id).order_by(model.Mottos.motto_id.desc()))
         result = result.fetchone().Mottos.motto_id
@@ -85,7 +86,8 @@ def add_fight():
     logging.info('Fight between %i and %i took place. %i hero won.', hero_1_id, hero_2_id, winner)
 
 
-def add_story(hero_id, story):
+def add_story(hero_id, *story):
+    story = ' '.join(story)
     with Session() as session:
         session.add(model.HeroStories(hero_id=hero_id, story=story))
         session.commit() 
