@@ -36,7 +36,7 @@ Then, to run scripts from container:
 
 `docker exec -it korolev_scripts_dev bash`
 
-`python scripts.py <func_name> <arguments1> <argument2> ... <argumentn>`
+`python scripts.py <func_name> <argument_1> <argument_2> ... <argument_n>`
 
 Once you are done running scripts:
 
