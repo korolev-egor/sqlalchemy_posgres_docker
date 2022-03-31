@@ -28,14 +28,23 @@
 ## How to run containers
 ### development
 To deploy from the root folder:
+
 `docker-compose up -d`
+
 Then, to run scripts from container:
+
 `docker exec -it korolev_scripts_dev bash`
+
 `python scripts.py <func_name> <arguments1> <argument2> ... <argumentn>`
+
 Once you are done running scripts:
+
 `exit`
+
 To switch containers off:
+
 `docker-compose down`
+
 ### production
 To deploy from the root folder:
 `docker-compose -f docker-compose.prod.yml up -d`
