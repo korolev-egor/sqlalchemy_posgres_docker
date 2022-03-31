@@ -45,7 +45,7 @@ To switch cotnainers off:
 `docker-compose down`
 ## Python functions calls examples
 ### add_hero(name, side=None, attribute=None, power=None, birthday=None)
-`python scripts.py add_hero Pepega dire Strength 100`
+`python scripts.py add_hero Pepega radiant Strength 100`
 ### add_motto(hero_id, *motto)
 `python scripts.py add_motto 100 FORSAAAAN`
 ### print_row(table_name, id_)
