@@ -1,6 +1,7 @@
 # Heroes PostgreSQL database in Docker containers 
 ## todo:
 - use argparse package
+- write logs to database
 ## Tables:
 #### Heroes:
 - id
