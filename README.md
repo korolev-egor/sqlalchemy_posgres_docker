@@ -47,10 +47,15 @@ To switch containers off:
 
 ### production
 To deploy from the root folder:
+
 `docker-compose -f docker-compose.prod.yml up -d`
+
 Then, to run scripts from container:
+
 `docker exec -it korolev_scripts_prod bash`
+
 To switch cotnainers off:
+
 `docker-compose down`
 ## Python functions calls examples
 ### add_hero(name, side=None, attribute=None, power=None, birthday=None)
